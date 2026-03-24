@@ -8,8 +8,8 @@
 
 <script>
     const backendURL = window.location.hostname === 'localhost'
-      ? 'http://localhost:5000/student-details'
-      : 'http://backend:5000/student-details';
+  ? 'http://localhost:5000/student-details'
+  : 'http://3.107.233.158:5000/student-details';
 
     fetch(backendURL)
       .then(res => res.json())
