@@ -1,0 +1,23 @@
+<html>
+
+<body>
+<p><center><b><h1> This is my frontend </h1></b></center></p>
+
+<p id="name">Name: Loading...</p>
+<p id="roll_number">Roll Number: Loading...</p>
+
+<script>
+    const backendURL = window.location.hostname === 'localhost'
+      ? 'http://localhost:5000/student-details'
+      : 'http://backend:5000/student-details';
+
+    fetch(backendURL)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("name").innerText = "Name: " + data.name;
+        document.getElementById("roll_number").innerText = "Roll Number: " + data.roll_number;
+      })
+      .catch(err => console.error("Error fetching data:", err));
+  </script>
+</body>
+</html>
